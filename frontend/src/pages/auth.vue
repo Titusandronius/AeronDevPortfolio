@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { login, register } from '../services/auth'
+import { login, register, loginWithGoogle } from '../services/auth'
 import { useAuthStore } from '../stores/auth'
+
 
 const authStore = useAuthStore()
 
@@ -127,6 +128,13 @@ async function logout() {
               ? 'Need an account? Register'
               : 'Already have an account? Login'
           }}
+        </button>
+        <button
+            type="button"
+            class="mt-4 w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 font-semibold text-white transition hover:bg-slate-700"
+            @click="loginWithGoogle"
+            >
+            Continue with Google
         </button>
       </template>
     </div>
