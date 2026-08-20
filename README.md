@@ -1,3 +1,13 @@
 # AerDevPortfolio
 
-Personal portfolio website built with Vue, TypeScript, Tailwind CSS, Laravel, PostgreSQL, Docker, and Supabase.
+A personal portfolio website showcasing my development capabilities, expertise, and projects.
+
+Built with:
+
+- Vue
+- TypeScript
+- Tailwind CSS
+- Laravel
+- PostgreSQL
+- Docker
+- Supabase
