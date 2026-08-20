@@ -1,10 +1,21 @@
+import './assets/main.css'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+
 import App from './App.vue'
-import './assets/main.css'
+import { useAuthStore } from './stores/auth'
 
 const app = createApp(App)
 
-app.use(createPinia())
+const pinia = createPinia()
+
+app.use(pinia)
+
+const authStore = useAuthStore(pinia)
+
+await authStore.initialize()
+
+authStore.listenToAuthChanges()
 
 app.mount('#app')
