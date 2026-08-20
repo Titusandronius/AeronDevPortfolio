@@ -30,3 +30,13 @@ export async function loginWithGoogle() {
     },
   })
 }
+
+export async function loginWithMicrosoft(){
+    return await supabase.auth.signInWithOAuth({
+        provider: 'azure',
+        options: {
+            redirectTo: window.location.origin,
+            scopes: 'email',
+        },
+    })
+}

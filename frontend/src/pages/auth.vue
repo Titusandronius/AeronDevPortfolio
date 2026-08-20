@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { login, register, loginWithGoogle } from '../services/auth'
+import { login, register, loginWithGoogle, loginWithMicrosoft } from '../services/auth'
 import { useAuthStore } from '../stores/auth'
 
 
@@ -135,6 +135,13 @@ async function logout() {
             @click="loginWithGoogle"
             >
             Continue with Google
+        </button>
+       <button
+        type="button"
+        class="mt-3 w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 font-semibold text-white transition hover:bg-slate-700"
+        @click="loginWithMicrosoft"
+        >
+        Continue with Microsoft
         </button>
       </template>
     </div>
