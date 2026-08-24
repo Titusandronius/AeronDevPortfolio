@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import { login, register, loginWithGoogle, loginWithMicrosoft } from '../services/auth'
 import { useAuthStore } from '../stores/auth'
+import { getLaravelUser } from '@/services/api'
+
 
 
 const authStore = useAuthStore()
@@ -39,6 +41,16 @@ async function submit() {
 async function logout() {
   await authStore.logout()
 }
+
+async function testLaravelAuth() {
+  try {
+    const user = await getLaravelUser()
+
+    console.log('Laravel authenticated user:', user)
+  } catch (error) {
+    console.error('Laravel authentication error:', error)
+  }
+}
 </script>
 <template>
   <main class="min-h-screen bg-slate-950 flex items-center justify-center px-4">
@@ -58,6 +70,13 @@ async function logout() {
           @click="logout"
         >
           Logout
+        </button>
+        <button
+          type="button"
+          class="mt-3 w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-700"
+          @click="testLaravelAuth"
+        >
+          Test Laravel Authentication
         </button>
       </template>
 
@@ -143,6 +162,7 @@ async function logout() {
         >
         Continue with Microsoft
         </button>
+       
       </template>
     </div>
   </main>
