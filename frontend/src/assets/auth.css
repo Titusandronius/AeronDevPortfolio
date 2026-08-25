@@ -1,0 +1,144 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #020617;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #0f172a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.auth-card h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.auth-subtitle,
+.auth-email {
+  margin-top: 0.5rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.auth-email {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-top: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  outline: none;
+  background: #1e293b;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #3b82f6;
+}
+
+.form-group input::placeholder {
+  color: #64748b;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  margin-top: 1.25rem;
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #3b82f6;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  margin-top: 1.5rem;
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #ef4444;
+}
+
+.btn-oauth {
+  margin-top: 0.75rem;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #fff;
+}
+
+.btn-oauth:first-of-type {
+  margin-top: 1rem;
+}
+
+.btn-oauth:hover {
+  background: #334155;
+}
+
+.auth-message {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: #1e293b;
+  color: #cbd5e1;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.switch-auth {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: 0;
+  background: transparent;
+  color: #60a5fa;
+  cursor: pointer;
+}
+
+.switch-auth:hover {
+  color: #93c5fd;
+}
+
