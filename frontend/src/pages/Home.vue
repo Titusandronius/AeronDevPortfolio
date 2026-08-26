@@ -2,7 +2,6 @@
 import { useProfile } from '@/composables/useProfile'
 import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
-
 const { profile, loading, error } = useProfile()
 </script>
 

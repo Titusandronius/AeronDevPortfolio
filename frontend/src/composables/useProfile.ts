@@ -6,7 +6,6 @@ export function useProfile(){
     const profile = ref<Profile | null>(null)
     const loading = ref(true)
     const error = ref('')
-
     async function loadProfile(){
         try {
             profile.value = await getProfile()
@@ -18,9 +17,7 @@ export function useProfile(){
             loading.value = false
         }
     }
-    
     onMounted(loadProfile)
-
     return{
         profile,
         loading,

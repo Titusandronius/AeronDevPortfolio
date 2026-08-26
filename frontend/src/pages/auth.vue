@@ -1,7 +1,6 @@
 
 <script setup lang="ts">
 import { useAuth } from '@/composables/useAuth'
-
 const {authStore,isLogin,email,password,message,loading,
   submit,logout,loginWithGoogle,loginWithMicrosoft,
 } = useAuth()
@@ -86,6 +85,5 @@ const {authStore,isLogin,email,password,message,loading,
     </div>
   </main>
 </template>
-
 <style src="@/assets/auth.css"></style>
 
