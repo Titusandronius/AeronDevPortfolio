@@ -9,7 +9,6 @@ export function useAuth() {
   const password = ref('')
   const message = ref('')
   const loading = ref(false)
-
   async function submit() {
     message.value = ''
     loading.value = true
@@ -28,11 +27,9 @@ export function useAuth() {
       isLogin.value = true
     }
   }
-
   async function logout() {
     await authStore.logout()
   }
-
   return {
     authStore,
     isLogin,
