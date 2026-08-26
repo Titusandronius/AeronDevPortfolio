@@ -2,6 +2,7 @@
 import { useProfile } from '@/composables/useProfile'
 import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
+import About from '@/components/About.vue'
 const { profile, loading, error } = useProfile()
 </script>
 
@@ -22,11 +23,8 @@ const { profile, loading, error } = useProfile()
     </div>
     <template v-else-if="profile">
       <Hero :profile="profile" />
+      <About :profile="profile"/>
       <!-- Temporary sections -->
-      <section id="about" class="min-h-screen px-6 py-24">
-        <h2 class="text-4xl font-bold">About</h2>
-      </section>
-
       <section id="skills" class="min-h-screen px-6 py-24">
         <h2 class="text-4xl font-bold">Skills</h2>
       </section>

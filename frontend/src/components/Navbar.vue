@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 
 const links = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' },
+  { name: 'About', href: '/#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
