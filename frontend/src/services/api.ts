@@ -12,3 +12,15 @@ export async function getProfile(){
     return await response.json()
 }
 
+export async function getSkills(){
+    const response = await fetch(`${API_URL}/skills`,{
+        headers: {
+            Accept: 'application/json',
+        },
+    })
+    if(!response.ok){
+        throw new Error('Failed to fetch Skills')
+    }
+    return await response.json()
+}
+

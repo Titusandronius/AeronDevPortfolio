@@ -3,7 +3,10 @@ import { useProfile } from '@/composables/useProfile'
 import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
 import About from '@/components/About.vue'
+import Skills from '@/components/Skills.vue'
+import { useSkills } from '@/composables/useSkills'
 const { profile, loading, error } = useProfile()
+const { skills, loading: skillsLoading, error: skillsError } = useSkills()
 </script>
 
 <template>
@@ -24,10 +27,9 @@ const { profile, loading, error } = useProfile()
     <template v-else-if="profile">
       <Hero :profile="profile" />
       <About :profile="profile"/>
+      <Skills v-if="!skillsLoading && !skillsError" :skills="skills"/>
       <!-- Temporary sections -->
-      <section id="skills" class="min-h-screen px-6 py-24">
-        <h2 class="text-4xl font-bold">Skills</h2>
-      </section>
+      
 
       <section id="experience" class="min-h-screen px-6 py-24">
         <h2 class="text-4xl font-bold">Experience</h2>
