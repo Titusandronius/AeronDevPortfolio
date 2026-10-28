@@ -1,3 +1,4 @@
+import type { Experience } from '@/types/experience'
 const API_URL = 'http://127.0.0.1:8000/api'
 
 export async function getProfile(){
@@ -23,4 +24,13 @@ export async function getSkills(){
     }
     return await response.json()
 }
+
+export async function getExperiences(): Promise<Experience[]> {
+  const response = await fetch(`${API_URL}/experiences`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch experiences')
+  }
+  return response.json()
+}
+
 

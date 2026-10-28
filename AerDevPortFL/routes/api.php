@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\SkillController;
+use App\Http\Controllers\Api\ExperienceController;
 
 
 Route::middleware('supabase.auth')->group(function () {
@@ -12,3 +13,4 @@ Route::middleware('supabase.auth')->group(function () {
 
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/skills', [SkillController::class,'index']);
+Route::get('/experiences', [ExperienceController::class, 'index']);
