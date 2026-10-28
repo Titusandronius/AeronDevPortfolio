@@ -27,11 +27,9 @@ export async function getSkills(){
 
 export async function getExperiences(): Promise<Experience[]> {
   const response = await fetch(`${API_URL}/experiences`)
-
   if (!response.ok) {
     throw new Error('Failed to fetch experiences')
   }
-
   return response.json()
 }
 

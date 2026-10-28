@@ -31,8 +31,6 @@ const {experiences,loading: experiencesLoading,error: experiencesError,} = useEx
       <Hero :profile="profile" />
       <About :profile="profile"/>
       <Skills v-if="!skillsLoading && !skillsError" :skills="skills"/>
-      <!-- Temporary sections -->
-      
       <Experience :experiences="experiences" :loading="experiencesLoading" :error="experiencesError"/>
 
       <section id="projects" class="min-h-screen px-6 py-24">

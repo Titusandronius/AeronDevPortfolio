@@ -1,4 +1,3 @@
-
 import { ref, onMounted } from 'vue'
 import { getExperiences } from '@/services/api'
 import type { Experience } from '@/types/experience'
@@ -7,7 +6,6 @@ export function useExperiences() {
   const experiences = ref<Experience[]>([])
   const loading = ref(true)
   const error = ref<string | null>(null)
-
   async function loadExperiences() {
     loading.value = true
     error.value = null
