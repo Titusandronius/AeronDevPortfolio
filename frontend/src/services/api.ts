@@ -1,5 +1,6 @@
 import type { Experience } from '@/types/experience'
 import type { Project } from '@/types/project'
+import type { Certificate } from '@/types/certificate'
 const API_URL = 'http://127.0.0.1:8000/api'
 
 export async function getProfile(){
@@ -42,9 +43,7 @@ export async function getProjects(): Promise<Project[]> {
   return response.json()
 }
 
-export async function getProjectBySlug(
-  slug: string
-): Promise<Project> {
+export async function getProjectBySlug(slug: string): Promise<Project> {
   const response = await fetch(
     `${API_URL}/projects/${encodeURIComponent(slug)}`
   )
@@ -53,6 +52,14 @@ export async function getProjectBySlug(
       throw new Error('Project not found')
     }
     throw new Error('Failed to fetch project details')
+  }
+  return response.json()
+}
+
+export async function getCertificates(): Promise<Certificate[]> {
+  const response = await fetch(`${API_URL}/certificates`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch certificates')
   }
   return response.json()
 }

@@ -7,8 +7,9 @@ import About from '@/components/About.vue'
 import Skills from '@/components/Skills.vue'
 import Experience from '@/components/Experience.vue'
 import Projects from '@/components/Projects.vue'
+import Certificates from '@/components/Certificates.vue'
 const {profile,loading,error,skills,skillsLoading,skillsError,experiences,experiencesLoading,experiencesError,
-projects,projectsLoading,projectsError,} = useHome()
+projects,projectsLoading,projectsError,certificates,certificatesLoading,certificatesError} = useHome()
 </script>
 
 <template>
@@ -26,9 +27,7 @@ projects,projectsLoading,projectsError,} = useHome()
       <Skills v-if="!skillsLoading && !skillsError" :skills="skills"/>
       <Experience :experiences="experiences":loading="experiencesLoading" :error="experiencesError"/>
       <Projects :projects="projects" :loading="projectsLoading":error="projectsError"/>
-      <section id="certificates" class="min-h-screen px-6 py-24">
-        <h2 class="text-4xl font-bold">Certificates</h2>
-      </section>
+      <Certificates :certificates="certificates" :loading="certificatesLoading" :error="certificatesError"/>
       <section id="resume" class="min-h-screen px-6 py-24">
         <h2 class="text-4xl font-bold">Resume</h2>
       </section>
