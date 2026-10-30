@@ -5,6 +5,7 @@ import { useProfile } from '@/composables/useProfile'
 import { useSkills } from '@/composables/useSkills'
 import { useExperiences } from '@/composables/useExperiences'
 import { useProjects } from '@/composables/useProjects'
+import {useCertificates} from '@/composables/useCertificates'
 
 export function useHome() {
   const route = useRoute()
@@ -12,6 +13,7 @@ export function useHome() {
   const {skills,loading: skillsLoading,error: skillsError,} = useSkills()
   const {experiences,loading: experiencesLoading,error: experiencesError,} = useExperiences()
   const {projects,loading: projectsLoading,error: projectsError,} = useProjects()
+  const {certificates,loading: certificatesLoading,error: certificatesError,} = useCertificates()
   watch(
     [
       () => route.hash,
@@ -19,6 +21,7 @@ export function useHome() {
       skillsLoading,
       experiencesLoading,
       projectsLoading,
+      certificatesLoading,
     ],
     async () => {
       if (!route.hash) return
@@ -48,5 +51,5 @@ export function useHome() {
     }
   )
   return {profile,loading,error,skills,skillsLoading,skillsError,experiences,experiencesLoading,
-    experiencesError,projects,projectsLoading,projectsError,}
+    experiencesError,projects,projectsLoading,projectsError,certificates,certificatesLoading,certificatesError,}
 }
