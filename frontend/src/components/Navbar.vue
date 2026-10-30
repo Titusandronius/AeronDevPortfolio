@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-
 const links = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Certificates', href: '#certificates' },
-  { name: 'Resume', href: '#resume' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Experience', href: '/#experience' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Certificates', href: '/#certificates' },
+  { name: 'Resume', href: '/#resume' },
+  { name: 'Contact', href: '/#contact' },
 ]
 </script>
 

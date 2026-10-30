@@ -1,61 +1,19 @@
-<script setup lang="ts">
-import { computed, ref } from 'vue'
-import type {
-  Experience,
-  ExperienceCategory,
-} from '@/types/experience'
 
+<script setup lang="ts">
+import { toRef } from 'vue'
+import type { Experience } from '@/types/experience'
+import { useExperienceFilters } from '@/composables/useExperienceFilters'
 const props = defineProps<{
   experiences: Experience[]
   loading: boolean
   error: string | null
 }>()
-
-const categories = [
-  'All',
-  'Work',
-  'Internship',
-  'Education',
-] as const
-
-const selected = ref<'All' | ExperienceCategory>('All')
-const filteredExperiences = computed(() =>
-  props.experiences.filter((experience) => {
-    if (selected.value === 'All') {
-      return categories.some(
-        (category) =>
-          category !== 'All' &&
-          category === experience.category
-      )
-    }
-    return experience.category === selected.value
-  })
-)
-
-function formatDate(date: string | null) {
-  if (!date) return 'Date not specified'
-  return new Date(`${date.slice(0, 10)}T00:00:00`)
-    .toLocaleDateString('en-US', {
-      month: 'short',
-      year: 'numeric',
-    })
-}
-
-function formatExperiencePeriod(item: Experience): string {
-  const start = item.start_date
-    ? formatDate(item.start_date)
-    : item.start_year?.toString() ?? 'Date not specified'
-  if (item.is_current) {
-    return `${start} – Present`
-  }
-  const end = item.end_date
-    ? formatDate(item.end_date)
-    : item.end_year?.toString() ?? null
-  if (!end || start === end) {
-    return start
-  }
-  return `${start} – ${end}`
-}
+const {
+  categories,
+  selected,
+  filteredExperiences,
+  formatExperiencePeriod,
+} = useExperienceFilters(toRef(props, 'experiences'))
 </script>
 
 <template>
