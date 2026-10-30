@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { useAuth } from '@/composables/useAuth'
 const {authStore,isLogin,email,password,message,loading,

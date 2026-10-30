@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Profile } from '@/types/profile';
-
 defineProps<{
     profile:Profile
 }>()

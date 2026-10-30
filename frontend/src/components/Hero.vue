@@ -1,12 +1,10 @@
 ```vue
 <script setup lang="ts">
 import type { Profile } from '@/types/profile'
-
 defineProps<{
   profile: Profile
 }>()
 </script>
-
 <template>
   <section id="home" class="hero">
     <div class="hero-background"></div>

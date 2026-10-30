@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import type { Skill } from '@/types/skill';
-
 defineProps<{
   skills:Skill[]  
 }>()
 </script>
-
 <template>
     <section id="skills" class="skills">
         <div class="skills-container">
@@ -30,5 +28,4 @@ defineProps<{
         </div>
     </section>
 </template>
-
 <style src="@/assets/skills.css"></style>
