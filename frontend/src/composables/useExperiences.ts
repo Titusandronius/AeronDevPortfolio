@@ -9,7 +9,6 @@ export function useExperiences() {
   async function loadExperiences() {
     loading.value = true
     error.value = null
-
     try {
       experiences.value = await getExperiences()
     } catch (err) {
@@ -20,9 +19,7 @@ export function useExperiences() {
       loading.value = false
     }
   }
-
   onMounted(loadExperiences)
-
   return {
     experiences,
     loading,

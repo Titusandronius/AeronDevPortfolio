@@ -17,9 +17,7 @@ export function useSkills(){
             loading.value = false
         }
     }
-    
     onMounted(loadSkills)
-
     return {
         skills, loading, error,
     }
